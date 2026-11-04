@@ -1,0 +1,101 @@
+Data shape: (150, 5)
+Columns: ['Sale_Price', 'Sq_Footage', 'Bedrooms', 'Home_Age_Years', 'Dist_Downtown_Mi']
+
+Model 1: all four predictors
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             Sale_Price   R-squared:                       0.894
+Model:                            OLS   Adj. R-squared:                  0.891
+Method:                 Least Squares   F-statistic:                     304.8
+Date:                Tue, 03 Nov 2026   Prob (F-statistic):           1.72e-69
+Time:                        19:23:02   Log-Likelihood:                -1833.0
+No. Observations:                 150   AIC:                             3676.
+Df Residuals:                     145   BIC:                             3691.
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+====================================================================================
+                       coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------
+Intercept         5.205e+04      2e+04      2.602      0.010    1.25e+04    9.16e+04
+Sq_Footage         175.9402     16.394     10.732      0.000     143.537     208.343
+Bedrooms          1.544e+04   9863.714      1.565      0.120   -4055.171    3.49e+04
+Home_Age_Years   -4537.6356    346.953    -13.079      0.000   -5223.374   -3851.897
+Dist_Downtown_Mi -9900.3666   1883.491     -5.256      0.000   -1.36e+04   -6177.722
+==============================================================================
+Omnibus:                        0.606   Durbin-Watson:                   1.862
+Prob(Omnibus):                  0.739   Jarque-Bera (JB):                0.734
+Skew:                          -0.130   Prob(JB):                        0.693
+Kurtosis:                       2.778   Cond. No.                     1.05e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 1.05e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+Labeled results:
+Coefficient (Intercept): 52,049
+p-value (Intercept): 0.0102
+Coefficient (Sq_Footage): 176
+p-value (Sq_Footage): 0.0000
+Coefficient (Bedrooms): 15,440
+p-value (Bedrooms): 0.1197
+Coefficient (Home_Age_Years): -4,538
+p-value (Home_Age_Years): 0.0000
+Coefficient (Dist_Downtown_Mi): -9,900
+p-value (Dist_Downtown_Mi): 0.0000
+R-squared: 0.894
+Adjusted R-squared: 0.891
+Residual standard error: $49,926
+Predicted price: $371,047
+List price: $380,000
+Difference (predicted minus list): $-8,953
+Should buy: False
+
+Model 2: without Bedrooms
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             Sale_Price   R-squared:                       0.892
+Model:                            OLS   Adj. R-squared:                  0.890
+Method:                 Least Squares   F-statistic:                     401.6
+Date:                Tue, 03 Nov 2026   Prob (F-statistic):           2.65e-70
+Time:                        19:23:02   Log-Likelihood:                -1834.3
+No. Observations:                 150   AIC:                             3677.
+Df Residuals:                     146   BIC:                             3689.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+====================================================================================
+                       coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------
+Intercept         6.424e+04   1.85e+04      3.469      0.001    2.76e+04    1.01e+05
+Sq_Footage         199.5117      6.514     30.627      0.000     186.637     212.386
+Home_Age_Years   -4570.3503    348.039    -13.132      0.000   -5258.195   -3882.505
+Dist_Downtown_Mi -9438.1467   1869.417     -5.049      0.000   -1.31e+04   -5743.532
+==============================================================================
+Omnibus:                        0.581   Durbin-Watson:                   1.863
+Prob(Omnibus):                  0.748   Jarque-Bera (JB):                0.565
+Skew:                          -0.146   Prob(JB):                        0.754
+Kurtosis:                       2.928   Cond. No.                     9.43e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 9.43e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+Labeled results:
+Coefficient (Intercept): 64,238
+p-value (Intercept): 0.0007
+Coefficient (Sq_Footage): 200
+p-value (Sq_Footage): 0.0000
+Coefficient (Home_Age_Years): -4,570
+p-value (Home_Age_Years): 0.0000
+Coefficient (Dist_Downtown_Mi): -9,438
+p-value (Dist_Downtown_Mi): 0.0000
+R-squared: 0.892
+Adjusted R-squared: 0.890
+Residual standard error: $50,173
+Predicted price: $384,822
+List price: $380,000
+Difference (predicted minus list): $4,822
+Should buy: True
